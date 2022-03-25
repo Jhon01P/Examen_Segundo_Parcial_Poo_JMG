@@ -5,6 +5,8 @@
  */
 package ec.edu.intsuperior.vista;
 
+import ec.edu.intsuperior.controlador.Controlador;
+
 /**
  *
  * @author JhonP
@@ -14,7 +16,9 @@ public class Docente extends javax.swing.JFrame {
     /**
      * Creates new form Docente
      */
-    public Docente() {
+    Controlador controlador;
+    public Docente(Controlador controlador) {
+        this.controlador=controlador;
         initComponents();
     }
 

@@ -5,6 +5,8 @@
  */
 package ec.edu.intsuperior.vista;
 
+import ec.edu.intsuperior.controlador.Controlador;
+
 /**
  *
  * @author JhonP
@@ -14,7 +16,9 @@ public class Loggin extends javax.swing.JFrame {
     /**
      * Creates new form Loggin
      */
-    public Loggin() {
+    Controlador controlador;
+    public Loggin(Controlador controlador) {
+        this.controlador=controlador;
         initComponents();
     }
 
@@ -139,6 +143,19 @@ public class Loggin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void ingresarSistema(){
+        
+        if(cbxModo.getSelectedItem().toString().equals("Estudiante")){
+            controlador.showEstudiante();
+        }
+        if(cbxModo.getSelectedItem().toString().equals("Docente")){
+            controlador.showDocente();
+        }
+        if(cbxModo.getSelectedItem().toString().equals("Administrador")){
+            controlador.showAdministrador();
+        }
+    }
+    
     private void cbxModoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxModoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxModoActionPerformed
